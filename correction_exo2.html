@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="interfac.css">
+    <title>JANGALMA - Agence Immobilière</title>
+    <style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.widget-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.widget {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 20px auto; /* Cela centre le widget horizontalement */
+    background-color: #fff;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 14px;
+}
+
+.contact-form {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 20px auto;
+    background-color: #fff;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input, textarea {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-bottom: 15px;
+}
+
+button {
+    padding: 10px;
+    margin: 5px;
+    font-size: 16px;
+}
+
+       
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-image">
+            <img src="3529caf2671aeb64cb6e0f7557c73aa0.jpg" alt="Interface d'exercice">
+        </div>
+        <div class="header-text">
+            <h1>JANGALMA</h1>
+            <p>Bienvenue sur notre page d'exercices. Trouvez ci-dessous une liste d'exercices avec des liens vers des pages spécifiques dédiées à chaque exercice.</p>
+        </div>
+        <div class="clearfix"></div>
+    </header>
+
+    <section class="Exercice 2">
+    </section>
+
+    <div class="widget">
+        
+        <form>
+            <label for="nombre1">Entrez le premier nombre :</label>
+            <input type="number" id="nombre1" oninput="validNumber(this)" required>
+
+            <br>
+
+            <label for="nombre2">Entrez le deuxième nombre :</label>
+            <input type="number" id="nombre2" oninput="validNumber(this)" required>
+
+            <br>
+
+            <button type="button" onclick="verifierMultiples()">Vérifier</button>
+        </form>
+
+        <p id="resultat1"></p>
+        <p id="resultat2"></p>
+    </div>
+
+    <script>
+        function verifierMultiples() {
+            var nombre1 = document.getElementById("nombre1").value;
+            var nombre2 = document.getElementById("nombre2").value;
+
+            var message1 = (nombre1 % 3 === 0 && nombre1 % 5 === 0) ? "est" : "n'est pas";
+            var message2 = (nombre2 % 3 === 0 && nombre2 % 5 === 0) ? "est" : "n'est pas";
+
+            var resultat1 = document.getElementById("resultat1");
+            resultat1.innerHTML = "Le nombre " + nombre1 + " " + message1 + " un multiple de 3 et de 5.";
+
+            var resultat2 = document.getElementById("resultat2");
+            resultat2.innerHTML = "Le nombre " + nombre2 + " " + message2 + " un multiple de 3 et de 5.";
+        }
+
+        function validNumber(input) {
+            input.value = input.value.replace(/[^0-9]/g, ''); // Supprime les caractères non numériques
+        }
+    </script>
+</body>
+</html>

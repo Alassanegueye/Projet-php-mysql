@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="interfac.css">
+    <title>JANGALMA - Agence Immobilière</title>
+    <style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.widget-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.widget {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 20px auto; /* Cela centre le widget horizontalement */
+    background-color: #fff;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 14px;
+}
+
+.contact-form {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 20px auto;
+    background-color: #fff;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input, textarea {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-bottom: 15px;
+}
+
+button {
+    padding: 10px;
+    margin: 5px;
+    font-size: 16px;
+}
+
+       
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-image">
+            <img src="3529caf2671aeb64cb6e0f7557c73aa0.jpg" alt="Interface d'exercice">
+        </div>
+        <div class="header-text">
+            <h1>JANGALMA</h1>
+            <p>Bienvenue sur notre page d'exercices. Trouvez ci-dessous une liste d'exercices avec des liens vers des pages spécifiques dédiées à chaque exercice.</p>
+        </div>
+        <div class="clearfix"></div>
+    </header>
+
+    <section class="widget">
+        <h2>Exercice : Calcul du Cercle</h2>
+        <p>Écrire un programme qui calcule le diamètre, le périmètre et la surface d’un cercle dont le rayon est saisi au clavier.</p>
+
+        <form>
+            <label for="rayon">Entrez le rayon du cercle :</label>
+            <input type="number" id="rayon" required>
+
+            <br>
+
+            <button type="button" onclick="calculerCercle()">Calculer</button>
+        </form>
+
+        <p id="result"></p>
+    </section>
+
+    <script>
+        function calculerCercle() {
+            var rayon = document.getElementById("rayon").value;
+
+            var diametre = 2 * rayon;
+            var perimetre = 2 * Math.PI * rayon;
+            var surface = Math.PI * rayon * rayon;
+
+            afficherResultat(diametre, perimetre, surface);
+        }
+
+        function afficherResultat(diametre, perimetre, surface) {
+            var resultElement = document.getElementById("result");
+            resultElement.innerHTML = "Diamètre : " + diametre + "<br> Périmètre : " + perimetre + "<br> Surface : " + surface;
+        }
+    </script>
+</body>
+</html>
